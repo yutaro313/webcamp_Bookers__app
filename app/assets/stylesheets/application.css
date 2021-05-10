@@ -13,3 +13,138 @@
  *= require_tree .
  *= require_self
  */
+
+ * {
+   margin:0;
+   padding:0;
+   box-sizing: border-box;
+   font-family: verdana, arial, helvetica, sans-serif;
+ }
+
+/*top*/
+.top {
+  margin-left:40px;
+  line-height: 3;
+  color:#333;
+}
+.top a {
+  color:#000;
+}
+a:hover {
+  color:white;
+  background-color: black;
+}
+.top-text {
+  font-size:13px;
+  margin-left:40px;
+}
+
+
+/*index*/
+.index {
+  margin:33px;
+  line-height:1.8;
+  color:#333;
+}
+.index p {
+  color:#333;
+}
+.title {
+  width:300px;
+}
+.body {
+  width:550px;
+}
+.link {
+  padding-right:10px;
+}
+.Books {
+  margin-bottom:20px;
+}
+.color {
+  color:#333;
+  margin-right: 8px;
+}
+.color:hover {
+  background-color: black;
+  color:white;
+}
+.index-submit {
+  width:100px;
+  height: 24px;
+  margin-top: 20px;
+  border-radius: 30px;
+}
+.newbook {
+  margin-left:33px;
+}
+
+/*errorのところ*/
+.index-errors {
+  width:550px;
+  height:150px;
+  margin-top:20px;
+  border:3px solid red;
+  margin-bottom:20px;
+}
+.index-text {
+  padding-left:-33px;
+}
+.index-error-title {
+  color:white;
+  background-color: red;
+}
+.index-errors li {
+  padding-top:20px;
+  padding-left:60px;
+}
+
+/*編集ページ*/
+.edit {
+  margin:40px 0 0 33px;
+}
+.edit h2 {
+  font-size:38px;
+  margin-bottom: 20px;
+}
+.edit-title {
+  margin-bottom: 20px;
+}
+.edit-body {
+  margin-bottom: 20px;
+}
+.edit-submit {
+  width:100px;
+  height: 24px;
+  margin-top:20px;
+  margin-bottom: 20px;
+  border-radius:30px
+}
+.edit-show {
+  color:#333;
+}
+
+.edit-back {
+  color:#333;
+}
+.edit-text {
+  padding-left: 33px;
+}
+
+/*詳細ページ*/
+.show {
+  margin:40px 0 0 50px;
+  line-height: 4;
+  color:#333;
+}
+.show-content {
+  margin-left:45px;
+}
+.show-command {
+  color:#333;
+}
+#notice {
+  margin-top:50px;
+  margin-left:70px;
+  color:green;
+}

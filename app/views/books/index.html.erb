@@ -1,2 +1,58 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<!--投稿一覧と投稿ページ-->
+<% if flash[:notice] %>
+  <p id="notice">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+<div class="index">
+  <div class="Books">
+    <h1>Books</h1>
+    <table>
+      <tr>
+        <th class="title">Title</th>
+        <th class="body">Body</th>
+        <th></th>
+      </tr>
+        <% @books.each do |book| %>
+        <tr>
+          <div class="color">
+        <td class="title"><%= book.title %></td>
+        <td><%= book.body %></td>
+        <td><span><%= link_to "Show", book_path(book.id),class:"color" %></span></td>
+        <td><span><%= link_to "Edit", edit_book_path(book.id),class:"color" %></span></td>
+        <td><span><%= link_to "Destroy", book_path(book.id), method: :delete, "data-confirm" =>"Are you sure?",class:"color" %></span></td>
+          </div>
+        </tr>
+        <% end %>
+    </table>
+  </div>
+
+
+
+<h2>New book</h2>
+<% if @book.errors.any? %>
+<div class="index-errors">
+  <div class="index-text">
+  <div class="index-error-title">
+  <%= @book.errors.count %> errors prohibited this book from begin saved:
+  </div>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      </div>
+  <% end %>
+<% end %>
+</div>
+
+<div class="newbook">
+<%= form_with model:@book, local:true do |f| %>
+<p>Title</p>
+<%= f.text_field :title %>
+
+<p>Body</p>
+<%= f.text_area :body %><br>
+
+<%= f.submit 'Create Book' ,class:"index-submit" %>
+
+<% end %>
+</div>
+</div>

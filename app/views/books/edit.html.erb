@@ -1,2 +1,41 @@
-<h1>Books#edit</h1>
-<p>Find me in app/views/books/edit.html.erb</p>
+<!--編集ページ-->
+<% if flash[:notice] %>
+  <p id="notice">
+    <%= flash[:notice] %>
+  </p>
+<% end %>
+
+<div class="edit">
+<h2>Editing Book</h2>
+<% if @book.errors.any? %>
+<div class="index-errors">
+  <div class="index-text">
+  <div class="index-error-title">
+  <%= @book.errors.count %> errors prohibited this book from begin saved:
+  </div>
+    <% @book.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      </div>
+  <% end %>
+<% end %>
+</div>
+<div class="edit-text">
+<%= form_with model:@book, local:true do |f| %>
+
+<p>Title</p>
+<%= f.text_field :title,class:"edit-title" %>
+
+<p>Body</p>
+<%= f.text_area :body %>
+<br>
+<%= f.submit 'Update Book',class:"edit-body",class:"edit-submit" %>
+
+<% end %>
+
+<p>
+  <%= link_to "Show", book_path(@book),class:"edit-show" %>
+  |
+  <%= link_to "Back", books_path,class:"edit-back"  %>
+</p>
+</div>
+</div>
